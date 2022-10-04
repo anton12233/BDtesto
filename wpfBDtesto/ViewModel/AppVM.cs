@@ -121,7 +121,11 @@ namespace wpfBDtesto.ViewModel
                 return deleteEvent ?? new RelayCommand(obj =>
                 {
                     Event.DeleteEvent(selectEvent);
-                    eventGrid.Remove(SelectEvent);
+                    //eventGrid.Remove(SelectEvent);
+
+                    EventGrid = Event.GetAllEvents();
+                    EventGrid.CollectionChanged += EventGrid_CollectionChanged;
+
                     OnPropertyChanged();
                 });
                 }
