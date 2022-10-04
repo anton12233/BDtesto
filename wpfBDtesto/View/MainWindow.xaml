@@ -1,0 +1,17 @@
+﻿<Window x:Class="wpfBDtesto.View.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:wpfBDtesto.View" xmlns:model="clr-namespace:wpfBDtesto.Model" xmlns:viewmodel="clr-namespace:wpfBDtesto.ViewModel" d:DataContext="{d:DesignInstance Type=viewmodel:AppVM}"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800"
+        SizeToContent="Width">
+    <Grid>
+        <DataGrid ItemsSource="{Binding EventGrid, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Margin="0,0,217,0" SelectedItem="{Binding SelectEvent}"/>
+        <Button Content="Delete" Margin="0,10,10,0" VerticalAlignment="Top" Height="40" HorizontalAlignment="Right" Width="202" Command="{Binding DeleteEvent}"/>
+        <Button Content="Update" Margin="0,55,10,0" VerticalAlignment="Top" Height="40" HorizontalAlignment="Right" Width="202" Command="{Binding UpdateEvent}"/>
+        <Button Content="Inset" Margin="0,100,10,0" VerticalAlignment="Top" Height="40" HorizontalAlignment="Right" Width="202" Command="{Binding OpenInsertEventWidnow}"/>
+
+    </Grid>
+</Window>
